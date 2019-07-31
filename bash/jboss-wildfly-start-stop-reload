@@ -1,12 +1,12 @@
 #!/bin/bash
 start(){
         echo "Starting JBoss WildFly 11..."
-	su -l svc-jboss -c '/opt/liferay/wildfly-11.0.0.Final/bin/standalone.sh > /dev/null 2> /dev/null &'
+	su -l liferay -c '/opt/liferay/wildfly-11.0.0.Final/bin/standalone.sh > /dev/null 2> /dev/null &'
 }
 
 stop(){
         echo "Stopping JBoss WildFly 11..."
-        su -l svc-jboss -c '/opt/liferay/wildfly-11.0.0.Final/bin/jboss-cli.sh --connect command=:shutdown'
+        su -l liferay -c '/opt/liferay/wildfly-11.0.0.Final/bin/jboss-cli.sh --connect command=:shutdown'
 }
 
 restart(){
@@ -14,8 +14,9 @@ restart(){
 	connect=`ss -nat | grep 9990 | wc -l`
 	if [ $connect -eq 0 ]
 	then
-		su -l svc-jboss -c '/opt/liferay/wildfly-11.0.0.Final/bin/standalone.sh > /dev/null 2> /dev/null &'
+		su -l liferay -c '/opt/liferay/wildfly-11.0.0.Final/bin/standalone.sh > /dev/null 2> /dev/null &'
 	else
+		su -l liferay -c '/opt/liferay/wildfly-11.0.0.Final/bin/jboss-cli.sh --connect command=:reload'
 	fi
 }
 
