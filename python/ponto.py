@@ -15,7 +15,6 @@
 from selenium import webdriver
 import sys
 if len(sys.argv) == 4:
-    print len(sys.argv)
     iakim = webdriver.Firefox(executable_path=(sys.argv[1]))
     iakim.get((sys.argv[2]))
     iakim.find_element_by_id("substituirloginpasso4").clear()
