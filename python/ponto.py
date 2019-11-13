@@ -7,7 +7,7 @@
 ## Passo 3: Extrair o arquivo geckodriver (linux) geckodriver.exe (windowns)
 ## Passo 4: Em inspecionar elemento verifique o Id do campo do usuario e subistua os campos "substituirloginpasso4" pelo Id.
 ## Passo 5: Em inspecionar elemento verifique o Id do campo de senha e subistua o campo "substituirsenhapasso5" pelo Id.
-## Passo 6: Em inspecionar elemento verifique o Id do campo de submit e subistua o campo "substituirsubmitpasso6" pelo Id.
+## Passo 6: Em inspecionar elemento verifique a classe (class="") do campo de submit e subistua o campo "substituirsubmitpasso6" pelo Id.
 ## Passo 7: Executar o comando "python ponto.py /path/to/geckodriver http://iakim.url.com/login/page username password"
 ## ee: Adicione na cron ou no agendador de tarefas a execução de tempos em tempos
 ############################################################################
