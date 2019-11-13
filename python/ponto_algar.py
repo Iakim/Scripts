@@ -6,7 +6,8 @@
 ## Passo 1: Instalar python 2.7.X
 ## Passo 2: Fazer download do GeckoDriver https://github.com/mozilla/geckodriver/releases
 ## Passo 3: Extrair o arquivo geckodriver (linux) geckodriver.exe (windowns)
-## Passo 4: Executar o comando "python ponto_algar.py /path/to/geckodriver usuario senha"
+## Passo 4: Instalar Selenium https://selenium-python.readthedocs.io/installation.html
+## Passo 5: Executar o comando "python ponto_algar.py /path/to/geckodriver usuario senha"
 ## ee: Adicione na cron ou no agendador de tarefas a execução de tempos em tempos
 ############################################################################
 from selenium import webdriver
