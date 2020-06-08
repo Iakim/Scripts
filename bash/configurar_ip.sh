@@ -15,6 +15,7 @@ definir()
   file="/etc/sysconfig/network-scripts/ifcfg-$dev"
   read -p "Insira o MAC address desejado (Enter para default): " mac
   mac="$(cat /sys/class/net/$dev/address)"
+  ver
 }
 alterar()
 {
@@ -31,9 +32,6 @@ alterar()
   `setenforce 0`
   sed -i 's/SELINUX=enforcing.*/SELINUX=disabled/' /etc/selinux/config
   systemctl restart network
-  ####################################################
-  #### Incluir mais comandos aqui!^.^!
-  ####################################################
   echo "Foram feitas as seguintes alteracoes:"
   echo ""
   echo "IPADDR=$staticip em $file"
@@ -45,18 +43,16 @@ alterar()
   echo "Desabilitado o Firewall e o Selinux"
   exit 0
 }
-definir
+ver ()
 {
 echo ""
 echo "Suas configuracoes sao: "
 echo "Gateway da rede:   $routerip"
 echo "Mascara da rede:   $netmask"
 echo "IP do servidor:    $staticip"
-echo "Hostname	 $hostname"
 echo "DNS:               $dns1"
 echo "MacAdress:         $mac"
 echo ""
-}
 while true; do
   read -p "Essas informacoes estao corretas? [y/n]: " yn
   case $yn in
@@ -65,3 +61,5 @@ while true; do
         * ) echo "Ecolha y or n!";;
   esac
 done
+}
+definir
